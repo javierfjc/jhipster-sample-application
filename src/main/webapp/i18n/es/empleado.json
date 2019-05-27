@@ -1,0 +1,29 @@
+{
+  "jhispterOrclApp": {
+    "empleado": {
+      "home": {
+        "title": "Empleados",
+        "createLabel": "Crear nuevo Empleado",
+        "createOrEditLabel": "Crear o editar Empleado"
+      },
+      "created": "Un nuevo Empleado ha sido creado con el identificador {{ param }}",
+      "updated": "Un Empleado ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Empleado ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Empleado {{ id }}?"
+      },
+      "detail": {
+        "title": "Empleado"
+      },
+      "nombre": "Nombre",
+      "email": "Email",
+      "telefono": "Telefono",
+      "antiguedad": "Antiguedad",
+      "salario": "Salario",
+      "comision": "Comision",
+      "help": {
+        "nombre": "The firstname attribute."
+      }
+    }
+  }
+}

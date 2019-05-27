@@ -1,0 +1,70 @@
+enum TareasEstado {
+    ASIGNADO, INICIADO, PENDIENTE, APLAZADO, FINALIZADO, APROBADO, INSTALADO
+  }
+  
+entity Proyecto {
+	descripcion String
+}
+
+entity Cliente {
+	descripcion String
+}
+
+entity Contacto {
+	nombre String,
+	email String,
+	telefono String,
+    perfil String
+}
+
+entity Tarea {
+	descripcion String,
+	estado TareasEstado,
+    fechaCreado Instant,
+    fechaPrevistoInicio Instant,
+    fechaInicio Instant,
+    fechaFinal Instant,
+    horasPrevisto Integer,
+}
+
+entity Departamento {
+	descripcion String required
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+entity Perfil {
+	titulo String,
+	descripcion String,
+    nivel Integer,
+}
+
+/**
+ * The Employee entity.
+ */
+entity Empleado {
+	/**
+	* The firstname attribute.
+	*/
+	nombre String,
+	email String,
+	telefono String,
+	antiguedad Instant,
+	salario Long,
+	comision Long
+}
+
+relationship ManyToOne {
+  Contacto{cliente} to Cliente
+}
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

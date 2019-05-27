@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tarea">
+            <h2><span jhiTranslate="jhispterOrclApp.tarea.detail.title">Tarea</span> {{tarea.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhispterOrclApp.tarea.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{tarea.descripcion}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhispterOrclApp.tarea.estado">Estado</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhispterOrclApp.TareasEstado.' + tarea.estado}}">{{tarea.estado}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhispterOrclApp.tarea.fechaCreado">Fecha Creado</span></dt>
+                <dd>
+                    <span>{{tarea.fechaCreado}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhispterOrclApp.tarea.fechaPrevistoInicio">Fecha Previsto Inicio</span></dt>
+                <dd>
+                    <span>{{tarea.fechaPrevistoInicio}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhispterOrclApp.tarea.fechaInicio">Fecha Inicio</span></dt>
+                <dd>
+                    <span>{{tarea.fechaInicio}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhispterOrclApp.tarea.fechaFinal">Fecha Final</span></dt>
+                <dd>
+                    <span>{{tarea.fechaFinal}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhispterOrclApp.tarea.horasPrevisto">Horas Previsto</span></dt>
+                <dd>
+                    <span>{{tarea.horasPrevisto}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tarea', tarea.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
