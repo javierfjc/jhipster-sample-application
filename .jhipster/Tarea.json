@@ -1,0 +1,44 @@
+{
+    "name": "Tarea",
+    "fields": [
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "TareasEstado",
+            "fieldValues": "ASIGNADO,INICIADO,PENDIENTE,APLAZADO,FINALIZADO,APROBADO,INSTALADO"
+        },
+        {
+            "fieldName": "fechaCreado",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "fechaPrevistoInicio",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "fechaInicio",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "fechaFinal",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "horasPrevisto",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190527160347",
+    "entityTableName": "tarea",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

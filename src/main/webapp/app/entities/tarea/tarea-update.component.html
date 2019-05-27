@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tarea-heading" jhiTranslate="jhispterOrclApp.tarea.home.createOrEditLabel">Create or edit a Tarea</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!tarea.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhispterOrclApp.tarea.descripcion" for="field_descripcion">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                           formControlName="descripcion"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhispterOrclApp.tarea.estado" for="field_estado">Estado</label>
+                    <select class="form-control" name="estado" formControlName="estado" id="field_estado">
+                        <option value="ASIGNADO">{{'jhispterOrclApp.TareasEstado.ASIGNADO' | translate}}</option>
+                        <option value="INICIADO">{{'jhispterOrclApp.TareasEstado.INICIADO' | translate}}</option>
+                        <option value="PENDIENTE">{{'jhispterOrclApp.TareasEstado.PENDIENTE' | translate}}</option>
+                        <option value="APLAZADO">{{'jhispterOrclApp.TareasEstado.APLAZADO' | translate}}</option>
+                        <option value="FINALIZADO">{{'jhispterOrclApp.TareasEstado.FINALIZADO' | translate}}</option>
+                        <option value="APROBADO">{{'jhispterOrclApp.TareasEstado.APROBADO' | translate}}</option>
+                        <option value="INSTALADO">{{'jhispterOrclApp.TareasEstado.INSTALADO' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhispterOrclApp.tarea.fechaCreado" for="field_fechaCreado">Fecha Creado</label>
+                    <div class="d-flex">
+                        <input id="field_fechaCreado" type="datetime-local" class="form-control" name="fechaCreado" formControlName="fechaCreado" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhispterOrclApp.tarea.fechaPrevistoInicio" for="field_fechaPrevistoInicio">Fecha Previsto Inicio</label>
+                    <div class="d-flex">
+                        <input id="field_fechaPrevistoInicio" type="datetime-local" class="form-control" name="fechaPrevistoInicio" formControlName="fechaPrevistoInicio" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhispterOrclApp.tarea.fechaInicio" for="field_fechaInicio">Fecha Inicio</label>
+                    <div class="d-flex">
+                        <input id="field_fechaInicio" type="datetime-local" class="form-control" name="fechaInicio" formControlName="fechaInicio" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhispterOrclApp.tarea.fechaFinal" for="field_fechaFinal">Fecha Final</label>
+                    <div class="d-flex">
+                        <input id="field_fechaFinal" type="datetime-local" class="form-control" name="fechaFinal" formControlName="fechaFinal" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhispterOrclApp.tarea.horasPrevisto" for="field_horasPrevisto">Horas Previsto</label>
+                    <input type="number" class="form-control" name="horasPrevisto" id="field_horasPrevisto"
+                           formControlName="horasPrevisto"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "jhispterOrclApp": {
+    "TareasEstado": {
+      "null": "",
+      "ASIGNADO": "ASIGNADO",
+      "INICIADO": "INICIADO",
+      "PENDIENTE": "PENDIENTE",
+      "APLAZADO": "APLAZADO",
+      "FINALIZADO": "FINALIZADO",
+      "APROBADO": "APROBADO",
+      "INSTALADO": "INSTALADO"
+    }
+  }
+}
